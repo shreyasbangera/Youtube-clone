@@ -2,7 +2,7 @@ const API_KEY ="AIzaSyD0BPTPKSUhEnh7AMWA7qFdImEAAdyy0Fk"
 
 export const YOUTUBE_VIDEO_API =`https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&key=${API_KEY}&chart=mostPopular&regionCode=IN&maxResults=50`
 
-export const SEARCH_SUGGESTIONS_API = "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q="
+export const SEARCH_SUGGESTIONS_API = "https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q="
 
 export const VIDEO_BY_ID_API =`https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=VIDEO_ID&key=${API_KEY}`
 
