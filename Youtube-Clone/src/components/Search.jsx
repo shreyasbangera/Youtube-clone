@@ -39,7 +39,6 @@ const Search = () => {
     setTimeout(() => fetchSearchSuggestions(), 200);
   }, [searchText]);
 
-  console.log(searchSuggestions);
   const fetchSearchSuggestions = async () => {
     const res = await axios.get(SEARCH_SUGGESTIONS_API + searchText);
     setSearchSuggestions(res.data[1]);
@@ -61,7 +60,7 @@ const Search = () => {
           className="absolute right-0 w-10 h-10 mr-12"
           onClick={() => setSearchText("")}
         >
-          <RxCross2 size={22} className="text-gray-500"/>
+          <RxCross2 size={22} className="text-gray-500" />
         </button>
         <button className="p-2 px-4 border border-l-0 rounded-r-full border-gray-400 bg-slate-100">
           <AiOutlineSearch size={22} />
