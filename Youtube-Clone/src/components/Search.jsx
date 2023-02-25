@@ -23,6 +23,15 @@ const Search = () => {
     }
   };
 
+  const handleKeyDown=(e)=> {
+    if(e.key==="Enter"){
+      if(searchText){
+    dispatch(search(searchText));
+    navigate("/results");
+      }
+    }
+    }
+
   const handleClick = (index) => {
     setSearchText(searchSuggestions[index]);
     dispatch(search(searchText));
@@ -55,6 +64,7 @@ const Search = () => {
           onChange={(e) => setSearchText(e.target.value)}
           onBlur={handleBlur}
           onFocus={() => setShowSuggestions(true)}
+          onKeyDown={handleKeyDown}
         />
         <button
           className="absolute right-0 w-10 h-10 mr-12"
