@@ -25,16 +25,15 @@ const Search = () => {
 
   const handleKeyDown=(e)=> {
     if(e.key==="Enter"){
-      if(searchText){
-    dispatch(search(searchText));
-    navigate("/results");
-      }
+    handleSearch(e);
+    setShowSuggestions(false)
     }
     }
 
   const handleClick = (index) => {
-    setSearchText(searchSuggestions[index]);
-    dispatch(search(searchText));
+    const updatedSearchText = searchSuggestions[index];
+    setSearchText(updatedSearchText)
+    dispatch(search(updatedSearchText));
     navigate("/results");
   };
 
@@ -79,7 +78,7 @@ const Search = () => {
       {showsuggestions && (
         <ul className="fixed top-[52px] bg-white w-[540px] rounded-lg shadow-2xl">
           {searchSuggestions?.map((search, index) => (
-            <div className="m-3">
+            <div className="m-3" key={index}>
               <li
                 className="p-1 font-semibold flex items-center gap-3 cursor-pointer"
                 onClick={() => handleClick(index)}

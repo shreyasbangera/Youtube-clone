@@ -25,11 +25,11 @@ const SearchResults = () => {
         const { thumbnails, title, channelTitle, publishedAt, description } = snippet;
         return (
           <Link to={`/watch/${search.id.videoId}`} className="flex mb-3" key={search.id.channelId}>
-          <div className="flex justify-center items-center w-[360px] h-[200px]">
+          <div className="flex justify-center items-center min-w-[360px] h-[200px]">
             <img
               src={thumbnails.medium.url}
               alt="Search video"
-              className={search.id.kind==="youtube#channel"?"rounded-full mx-auto w-[136px] h=[136px]":"rounded-xl w-full h-full"}
+              className={search.id.kind==="youtube#channel"?"rounded-full mx-auto w-[136px] h=[136px]":"rounded-xl w-full"}
             />
             </div>
             <div className="ml-3">
