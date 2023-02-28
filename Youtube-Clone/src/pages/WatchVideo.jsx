@@ -4,8 +4,10 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Comments from "../components/Comments";
 import { VIDEO_BY_ID_API, YOUTUBE_VIDEO_API } from "../utils/constants";
-import { BiLike, BiDislike } from "react-icons/bi";
+import { BiLike, BiDislike, BiDotsHorizontalRounded } from "react-icons/bi";
 import RelatedVideos from "../components/RelatedVideos";
+import { RiShareForwardLine } from "react-icons/ri";
+import {TfiDownload} from 'react-icons/tfi'
 
 const WatchVideo = () => {
   const { id } = useParams();
@@ -28,9 +30,10 @@ const WatchVideo = () => {
       <iframe
         width="920px"
         height="500"
-        src={`https://www.youtube.com/embed/${id}`}
+        src={`https://www.youtube.com/embed/${id}?autoplay=1`}
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowFullScreen
       ></iframe>
 
       </div>
@@ -54,18 +57,18 @@ const WatchVideo = () => {
                 </div>
               </div>
               <ul className="flex gap-2">
-                <li className="bg-gray-100 py-2 px-4 rounded-full flex items-center gap-2">
-                  <span className="mr-2 flex gap-2">
+                <li className="flex">
+                  <span className="bg-gray-100 py-2 px-4 rounded-l-full border-r-2 flex gap-2 cursor-pointer hover:bg-gray-200">
                     <span><BiLike size={22} /></span>
                     {likeCount}
                   </span>
-                  <span>
+                  <span className="bg-gray-100 py-2 px-4 rounded-r-full flex gap-2 cursor-pointer hover:bg-gray-200">
                     <BiDislike size={22} />
                   </span>
                 </li>
-                <li className="bg-gray-100 py-2 px-4 rounded-full">Share</li>
-                <li className="bg-gray-100 py-2 px-4 rounded-full">Download</li>
-                <li className="bg-gray-100 py-2 px-4 rounded-full">dots</li>
+                <li className="bg-gray-100 cursor-pointer hover:bg-gray-200 py-2 px-4 rounded-full flex gap-2 items-center"><RiShareForwardLine size={22} />Share</li>
+                <li className="bg-gray-100 cursor-pointer hover:bg-gray-200 py-2 px-4 rounded-full flex gap-2 items-center"><TfiDownload size={18}/>Download</li>
+                <li className="bg-gray-100 cursor-pointer hover:bg-gray-200 p-2 rounded-full"><BiDotsHorizontalRounded size={22}/></li>
               </ul>
             </div>
             <div className="bg-gray-100 p-2 rounded-lg font-semibold">

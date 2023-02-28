@@ -65,12 +65,14 @@ const Search = () => {
           onFocus={() => setShowSuggestions(true)}
           onKeyDown={handleKeyDown}
         />
+        {searchText &&
         <button
           className="absolute right-0 w-10 h-10 mr-12"
           onClick={() => setSearchText("")}
         >
           <RxCross2 size={22} className="text-gray-500" />
         </button>
+        }
         <button className="p-2 px-4 border border-l-0 rounded-r-full border-gray-400 bg-slate-100">
           <AiOutlineSearch size={22} />
         </button>
@@ -90,7 +92,7 @@ const Search = () => {
           ))}
         </ul>
       )}
-      <IoMdMic size={22} className="ml-4" />
+      <span className="p-2 ml-2 cursor-pointer rounded-full hover:bg-gray-200"><IoMdMic size={22} /></span>
     </div>
   );
 };

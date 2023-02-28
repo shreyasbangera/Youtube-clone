@@ -20,7 +20,7 @@ const Navbar = () => {
   return (
     <div className="flex h-[56px] w-full items-center justify-between fixed bg-white z-10">
       <div className="flex items-center z-20">
-        <button className="p-2" onClick={() => dispatch(toggleSidebar())}>
+        <button className="p-2 rounded-full hover:bg-gray-200" onClick={() => dispatch(toggleSidebar())}>
           <RxHamburgerMenu size={20} />
         </button>
         <Link to="/">
@@ -34,11 +34,11 @@ const Navbar = () => {
       <div>
         <Search />
       </div>
-      <div className="flex gap-4 mx-10">
-        <RiVideoAddLine size={22} />
-        <IoMdNotificationsOutline size={22} className="ml-2" />
-        <FaRegUserCircle size={22} className="ml-2" />
-      </div>
+      <ul className="flex gap-4 mx-10">
+        <li className="p-2 hover:bg-gray-200 cursor-pointer rounded-full"><RiVideoAddLine size={22} /></li>
+        <li className="p-2 hover:bg-gray-200 cursor-pointer rounded-full"><IoMdNotificationsOutline size={22}  /></li>
+        <li className="p-2 hover:bg-gray-200 cursor-pointer rounded-full"><FaRegUserCircle size={22} /></li>
+        </ul>
       <Sidebar />
 
       {/* Side Icons */}
@@ -48,9 +48,9 @@ const Navbar = () => {
         <Link to ="/" >
           <li className="flex flex-col items-center gap-2"><AiFillHome size={22}/>Home</li>
           </Link>
-          <li className="flex flex-col items-center gap-2"><SiYoutubestudio size={22}/>Shorts</li>
-          <li className="flex flex-col items-center gap-2"><MdOutlineSubscriptions size={22}/>Subscriptions</li>
-          <li className="flex flex-col items-center gap-2"><MdOutlineVideoLibrary size={22}/>Library</li>
+          <li className="flex flex-col items-center gap-2 cursor-pointer"><SiYoutubestudio size={22}/>Shorts</li>
+          <li className="flex flex-col items-center gap-2 cursor-pointer"><MdOutlineSubscriptions size={22}/>Subscriptions</li>
+          <li className="flex flex-col items-center gap-2 cursor-pointer"><MdOutlineVideoLibrary size={22}/>Library</li>
         </ul>
       
       </div>
