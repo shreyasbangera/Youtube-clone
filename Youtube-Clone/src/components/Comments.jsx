@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { COMMENTS_API } from '../utils/constants'
+import { COMMENTS_API, kFormatter } from '../utils/constants'
 import { BiLike, BiDislike } from "react-icons/bi";
 import ReactHtmlParser from 'html-react-parser'
 
@@ -40,7 +40,7 @@ const Comments = ({id, commentCount}) => {
     <p>{topLevelComment.snippet.authorDisplayName}</p>
     <p className='font-normal'>{ReactHtmlParser(topLevelComment.snippet.textDisplay)}</p>
     <div className='flex gap-4 mt-2 items-center'>
-      <button className='flex font-normal text-sm items-center gap-2'><BiLike size={20}/>{topLevelComment.snippet.likeCount}</button>
+      <button className='flex font-normal text-sm items-center gap-2'><BiLike size={20}/>{kFormatter(topLevelComment.snippet.likeCount)}</button>
       <button><BiDislike size={20}/></button>
       <button>Reply</button>
     </div>
