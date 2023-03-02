@@ -1,4 +1,4 @@
-const API_KEY ="AIzaSyBy935b6ovjkHOWOAnStMIBAtU0U--mZm8"
+const API_KEY ="AIzaSyCFFyC_PAgJVHBbwL-v4ca4msHQi2bdrqE"
 
 export const YOUTUBE_VIDEO_API =`https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&key=${API_KEY}&chart=mostPopular&regionCode=IN&maxResults=50`
 
@@ -20,7 +20,7 @@ export function kFormatter(views) {
     } else if (views >= 1e6) {
       return (views / 1e6).toFixed(1) + 'M';
     } else if (views >= 1e3) {
-      return (views / 1e3).toFixed(2) + 'K';
+      return (views / 1e3).toFixed(0) + 'K';
     } else {
       return views;
     }
