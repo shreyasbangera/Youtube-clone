@@ -2,8 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { COMMENTS_API } from '../utils/constants'
 import { BiLike, BiDislike } from "react-icons/bi";
-import ReactHtmlParser from 'react-html-parser'
-import { FaRegUserCircle } from 'react-icons/fa';
+import ReactHtmlParser from 'html-react-parser'
 
 const Comments = ({id, commentCount}) => {
 
