@@ -17,8 +17,8 @@ const RelatedVideos = ({ id }) => {
   return (
     <div className="w-[400px] h-[90px] p-2 ml-2 pt-20">
       {relatedVideos.map((video) => {
-        const { snippet, statistics, id } = video;
-        const { thumbnails, title, channelTitle, publishedAt } = snippet;
+        const { snippet,  id } = video;
+        const { thumbnails, title, channelTitle} = snippet;
         return (
           <Link to ={`/watch/${id.videoId}`} className="flex mb-2" key={id.videoId}>
             <img src={thumbnails.medium.url} alt="Related video" className="w-[168px] h-[94px] rounded-lg" />
