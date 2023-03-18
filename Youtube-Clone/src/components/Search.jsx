@@ -44,7 +44,10 @@ const Search = () => {
   };
 
   useEffect(() => {
-    setTimeout(() => fetchSearchSuggestions(), 200);
+    const timer = setTimeout(() => fetchSearchSuggestions(), 300);
+    return() =>{
+      clearTimeout(timer)
+    }
   }, [searchText]);
 
   const fetchSearchSuggestions = async () => {
