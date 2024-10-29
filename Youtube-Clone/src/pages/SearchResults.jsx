@@ -16,7 +16,6 @@ const SearchResults = () => {
     const formattedUrl = SEARCH_RESULTS_API.replace("SEARCH_QUERY", searchQuery);
     const res = await axios.get(formattedUrl);
     setSearchResults(res.data.items);
-    console.log(res.data.items);
   };
   return (
     <div className="w-[1200px] py-20 mx-auto flex flex-col">
